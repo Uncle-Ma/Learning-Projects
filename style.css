@@ -1,0 +1,47 @@
+/*Although this makes the image go to the center of the screen it is a very old method and you should not do this for every
+project instead, learn how to use flexboxes*/
+
+.hero {
+  display: block;       /* Make the image a block element so it starts on a new line and other content can't sit beside it */
+  margin: 0 auto;       /* Horizontally center the block element within its container */
+  width: 500px;         /* Set the width of the image to 500 pixels */
+  height: 500px;        /* Set the height to 500 pixels; optional, but watch out for distortion if it doesn't match original aspect ratio */
+  /* Summary: 
+     - display: block ensures the image is in normal flow (so <main> appears under it)
+     - margin: 0 auto centers it
+     - width & height define the image size
+  */
+}
+/* Centering text over an image in the header */
+/* Let's not make the same mistake twice */
+
+header {
+  position: relative;
+}
+
+h1 {
+  color: rgb(0, 0, 0);    /* optional: so it’s visible over the image */
+  font-size: 24px;
+  text-align: center;    /* Center the text horizontally */
+}
+/* --- IGNORE --- */
+/*The above code is used to center the text in the header image*/
+
+.container {
+display: flex;
+justify-content: space-between; /* Space between items */
+align-items: center; /* Center items vertically */
+width: 100%; /* Full width of the container */ 
+}
+/* IT's display must be flex */
+.container p {
+  max-width: 1000px; /* leave room for the image (500px) + gap (20px) */
+  margin: 0;
+  flex-grow: 1;
+
+}
+.front-close {
+  max-width: 500px; /* set a maximum width for the image */
+  height: auto; /* maintain aspect ratio */
+  display: block; /* makes the image a block element and removed the tiny gap below the image. According to gpt, makes it eaiser to align. Also leaves a small vertical gap, aligns with text baseline */
+}
